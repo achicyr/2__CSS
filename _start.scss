@@ -10,13 +10,26 @@
 // système 7-1: Type de codebase optimal pour le codage en sass (scss)
 
 
-  CSS ETAPE 4:
-    DANS NOTRE COMPOSANT BEM, L'ÉLÉMENT '.exemple__section' SEMBLE AUSSI POUVOIR ÊTRE TRANSFORMABLE EN COMPOSANT BEM
-    NOUS APPELERONT CE NOUVEAU COMPOSANT '.section'
+  CSS ETAPE 5:
+    REPRODUIRE LES ÉTAPE 2 ET 3 RECOPIÉ CI-DESSOUS, AFIN DE RENDRE NOTRE NOUVEAU COMPOSANT BEM .section LE PLUS MODULABLE POSSIBLE
 
-    IDENTIFIER CE FUTUR BLOCK BEM .section DANS LES RÈGLES DE STYLE SASS 
-    PUIS, IDENTIFIER SES ÉLÉMENTS (BALISES QUE VOUS VENEZ DE DÉFINIR DANS LE CODE HTML COMME LES ÉLÉMENTS DU FUTURE BLOCK BEM .section)
-    PUIS, CHANGER CE QU'IL FAUT POUR FAIRE APPARAÎTE LE NOM DE CES CLASSES BEM DANS VOTRE HIÉRARCHIE SASS
+        étape 2: 
+            CODER UN ENSEMBLE COMPLET DE FONCTIONNALITÉS SASS (VIDE POUR L'INSTANT)
+            PORTANT LE MÊME NOM (ET LA MÊME NOMENCLATURE) QUE VOTRE FUTURE COMPOSANT BEM UTILISERA,
+            ET COMPORTANT SI NÉCESSAIRE DES INFOS PAR DÉFAUT
+
+            On va utliser tous les outils(5) de SASS qui en font toute sa puissance,
+            afin de rendre notre future composant le plus modulaire possible.
+            $variable, @function, @mixin, .extension(déjà là), et enfin %placeholder
+    
+        étape 3:
+            1°) CRÉER LA NOMENCLATURE BEM DANS LE %PLACEHOLDER ET DANS LA @MIXIN
+            2°) TRANSFÉRER LE DÉCLARATIONS DE L' .EXTENSION VERS LE %PLACEHOLDER
+            3°) PUIS DANS LES CIBLES DE LA @MIXIN, FAIRE DES @EXTEND DU PLACEHOLDER
+            4°) PUIS, INCLURE LA @MIXIN DANS L' .EXTENSION
+            5°) ET ENFIN, AMÉLIORER LES VALEURS ET COMPORTEMENTS PAR DÉFAUT DES $VARIABLES ET @FUNCTION DU COMPOSANT BEM
+    
+            vous pouvez fold les éléments de votre %placeholder pour gagner en visibilité ;)
 
 */
 
@@ -30,14 +43,32 @@
 main>article{}
 
 /******************************************************************************************/
-/*****************************************block .section***********************************/
-.section{
+/**BLOCK .SECTION**************************************************************************/
+$section: (name: "section");
+@function section($_section:$section){
+  // ..do stuff 
+  //...and @if $_section exists, merge it into $section before sending it back
+  //...and @if it doesn't, apply your conditions on $section
+  @if $_section != $section {
+      $section: map.merge($section, $_section);
+      // ..and maybe do other stuff. you can: 
+      // - forbidden value types, 
+      // - bound values, 
+      // - darknessing or lightnessing colors, 
+      // - etc...
+      // @if map-has-key($_section, 'name'){$section: map.set($section, "name", map.get($_section, "name")) + "modifying name property by adding string to it for example...";}
+      // @if map-has-key($_section, 'padding'){}
+      // @if map-has-key($_section, 'some_custom_values'){}
+      // ....
+  }
+}
+%section{
   &__titre{
     text-transform: uppercase;
     margin-bottom:3rem;
     @extend %titre1--s;
     @extend %rel;
-
+  
     @extend %titres;
     @extend %fontB;
     &.--menu{
@@ -52,8 +83,8 @@ main>article{}
     animation: menuPageAnimation 1s ease-in 1s 1 forwards;
     overflow:hidden;
     margin-bottom: 5rem;
-
-
+  
+  
     @include blockList-0__list();
     // @include blockList-0__list--liAnimation-0;
     @include blockList-0__list--liAnimation-1;
@@ -62,8 +93,18 @@ main>article{}
     @include jumbotron__explorerButton;
   }
 }
+@mixin section(){
+  @extend %section;
+  &__titre{@extend %section__titre;}
+  &__list{@extend %section__list;}
+  &__button{@extend %section__button;}
+}
+.section{@include section();}
+
+
 /******************************************************************************************/
-/*****************************************block exemple************************************/
+/******************************************************************************************/
+/**BLOCK EXEMPLE***************************************************************************/
 $exemple: (name: 'exemple'); // a map conaining at least a 'name' key, in case of use as an subcomponent
 @function exemple($_exemple: $exemple){
 // ..do stuff 

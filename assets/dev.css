@@ -62,7 +62,7 @@
   color: silver;
 }
 
-.exemple__titre, .section__titre.--menu, .laCarte__menus .plats__titre.--menu, .laCarte__titre, .listSteps__titre.--menu {
+.exemple__titre, .--menu.section__titre, .laCarte__menus .plats__titre.--menu, .laCarte__titre, .listSteps__titre.--menu {
   font-size: xx-large;
 }
 
@@ -82,7 +82,7 @@
   font-weight: 100;
 }
 
-.exemple__titre, .section__titre.--menu, .laCarte__menus .plats__titre.--menu, .laCarte__titre, .listSteps__titre.--menu {
+.exemple__titre, .--menu.section__titre, .laCarte__menus .plats__titre.--menu, .laCarte__titre, .listSteps__titre.--menu {
   font-family: Shrikhand;
 }
 
@@ -212,7 +212,7 @@ METTRE "!optional" LÀ OÙ IL FAUT...                             (À LA FIN DE 
   position: relative;
 }
 
-.before__titles--underline::before, .section__titre.--underline::before, .laCarte__menus .plats__titre.--underline::before, .laCarte__menus .plats__titre--underline::before, .listSteps__titre.--underline::before, .listSteps__titre--underline::before, .section__list > li > a::before, .laCarte__menus .plats__list.--liAnimation-1 > li > a::before, .laCarte__menus .plats__list--liAnimation-1 > li > a::before, .laCarte__menus .plats__list.--liAnimation-0 > li > a::before, .laCarte__menus .plats__list--liAnimation-0 > li > a::before, .listSteps__list.--liAnimation-1 > li > a::before, .listSteps__list--liAnimation-1 > li > a::before, .listSteps__list.--liAnimation-0 > li > a::before, .listSteps__list--liAnimation-0 > li > a::before, .section__list > li > span, .laCarte__menus .plats__list.--liAnimation-1 > li > span, .laCarte__menus .plats__list--liAnimation-1 > li > span, .listSteps__list.--liAnimation-1 > li > span, .listSteps__list--liAnimation-1 > li > span {
+.before__titles--underline::before, .--underline.section__titre::before, .laCarte__menus .plats__titre.--underline::before, .laCarte__menus .plats__titre--underline::before, .listSteps__titre.--underline::before, .listSteps__titre--underline::before, .section__list > li > a::before, .laCarte__menus .plats__list.--liAnimation-1 > li > a::before, .laCarte__menus .plats__list--liAnimation-1 > li > a::before, .laCarte__menus .plats__list.--liAnimation-0 > li > a::before, .laCarte__menus .plats__list--liAnimation-0 > li > a::before, .listSteps__list.--liAnimation-1 > li > a::before, .listSteps__list--liAnimation-1 > li > a::before, .listSteps__list.--liAnimation-0 > li > a::before, .listSteps__list--liAnimation-0 > li > a::before, .section__list > li > span, .laCarte__menus .plats__list.--liAnimation-1 > li > span, .laCarte__menus .plats__list--liAnimation-1 > li > span, .listSteps__list.--liAnimation-1 > li > span, .listSteps__list--liAnimation-1 > li > span {
   position: absolute;
 }
 
@@ -693,7 +693,7 @@ footer > h5 {
     background: silver;
   }
 }
-.before__titles--underline::before, .section__titre.--underline::before, .laCarte__menus .plats__titre.--underline::before, .laCarte__menus .plats__titre--underline::before, .listSteps__titre.--underline::before, .listSteps__titre--underline::before {
+.before__titles--underline::before, .--underline.section__titre::before, .laCarte__menus .plats__titre.--underline::before, .laCarte__menus .plats__titre--underline::before, .listSteps__titre.--underline::before, .listSteps__titre--underline::before {
   content: "";
   bottom: -1rem;
   left: 0;
@@ -1455,13 +1455,26 @@ $listMenus__card--figcaption: ();
 // système 7-1: Type de codebase optimal pour le codage en sass (scss)
 
 
-  CSS ETAPE 4:
-    DANS NOTRE COMPOSANT BEM, L'ÉLÉMENT '.exemple__section' SEMBLE AUSSI POUVOIR ÊTRE TRANSFORMABLE EN COMPOSANT BEM
-    NOUS APPELERONT CE NOUVEAU COMPOSANT '.section'
+  CSS ETAPE 5:
+    REPRODUIRE LES ÉTAPE 2 ET 3 RECOPIÉ CI-DESSOUS, AFIN DE RENDRE NOTRE NOUVEAU COMPOSANT BEM .section LE PLUS MODULABLE POSSIBLE
 
-    IDENTIFIER CE FUTUR BLOCK BEM .section DANS LES RÈGLES DE STYLE SASS 
-    PUIS, IDENTIFIER SES ÉLÉMENTS (BALISES QUE VOUS VENEZ DE DÉFINIR DANS LE CODE HTML COMME LES ÉLÉMENTS DU FUTURE BLOCK BEM .section)
-    PUIS, CHANGER CE QU'IL FAUT POUR FAIRE APPARAÎTE LE NOM DE CES CLASSES BEM DANS VOTRE HIÉRARCHIE SASS
+        étape 2: 
+            CODER UN ENSEMBLE COMPLET DE FONCTIONNALITÉS SASS (VIDE POUR L'INSTANT)
+            PORTANT LE MÊME NOM (ET LA MÊME NOMENCLATURE) QUE VOTRE FUTURE COMPOSANT BEM UTILISERA,
+            ET COMPORTANT SI NÉCESSAIRE DES INFOS PAR DÉFAUT
+
+            On va utliser tous les outils(5) de SASS qui en font toute sa puissance,
+            afin de rendre notre future composant le plus modulaire possible.
+            $variable, @function, @mixin, .extension(déjà là), et enfin %placeholder
+
+        étape 3:
+            1°) CRÉER LA NOMENCLATURE BEM DANS LE %PLACEHOLDER ET DANS LA @MIXIN
+            2°) TRANSFÉRER LE DÉCLARATIONS DE L' .EXTENSION VERS LE %PLACEHOLDER
+            3°) PUIS DANS LES CIBLES DE LA @MIXIN, FAIRE DES @EXTEND DU PLACEHOLDER
+            4°) PUIS, INCLURE LA @MIXIN DANS L' .EXTENSION
+            5°) ET ENFIN, AMÉLIORER LES VALEURS ET COMPORTEMENTS PAR DÉFAUT DES $VARIABLES ET @FUNCTION DU COMPOSANT BEM
+
+            vous pouvez fold les éléments de votre %placeholder pour gagner en visibilité ;)
 
 */
 @keyframes menuPageAnimation {
@@ -1480,7 +1493,7 @@ $listMenus__card--figcaption: ();
   }
 }
 /******************************************************************************************/
-/*****************************************block .section***********************************/
+/**BLOCK .SECTION**************************************************************************/
 .section__titre {
   text-transform: uppercase;
   margin-bottom: 3rem;
@@ -1492,13 +1505,13 @@ $listMenus__card--figcaption: ();
   margin-bottom: 5rem;
 }
 @media screen and (min-width: 1000px) {
-  .section__list.DESKTOP {
+  .DESKTOP.section__list {
     display: flex;
     justify-content: space-between;
   }
 }
 @media screen and (min-width: 1000px) {
-  .section__list.DESKTOP > li {
+  .DESKTOP.section__list > li {
     width: 33%;
   }
 }
@@ -1615,7 +1628,8 @@ $listMenus__card--figcaption: ();
 }
 
 /******************************************************************************************/
-/*****************************************block exemple************************************/
+/******************************************************************************************/
+/**BLOCK EXEMPLE***************************************************************************/
 .exemple {
   padding: 2rem 1rem;
   border-radius: 3rem 3rem 0 0;
