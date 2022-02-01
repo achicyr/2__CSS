@@ -10,43 +10,54 @@
 // système 7-1: Type de codebase optimal pour le codage en sass (scss)
 
 
-  CSS ETAPE 2: 
-    CODER UN ENSEMBLE COMPLET DE FONCTIONNALITÉS SASS (VIDE POUR L'INSTANT)
-    PORTANT LE MÊME NOM (ET LA MÊME NOMENCLATURE) QUE VOTRE FUTURE COMPOSANT BEM UTILISERA,
-    ET COMPORTANT SI NÉCESSAIRE DES INFOS PAR DÉFAUT
-
-    On va utliser tous les outils(5) de SASS qui en font toute sa puissance, 
-    afin de rendre notre future composant le plus modulaire possible.
-    $variable, @function, @mixin, .extension(déjà là), et enfin %placeholder
+  CSS ETAPE 3: 
+    1°) CRÉER LA NOMENCLATURE BEM DANS LE %PLACEHOLDER ET DANS LA @MIXIN
+    2°) TRANSFÉRER LE DÉCLARATIONS DE L' .EXTENSION VERS LE %PLACEHOLDER
+    3°) PUIS DANS LES CIBLES DE LA @MIXIN, FAIRE DES @EXTEND DU PLACEHOLDER
+    4°) PUIS, INCLURE LA @MIXIN DANS L' .EXTENSION
+    5°) ET ENFIN, AMÉLIORER LES VALEURS ET COMPORTEMENTS PAR DÉFAUT DES $VARIABLES ET @FUNCTION DU COMPOSANT BEM
+    
+    vous pouvez fold les éléments de votre %placeholder pour gagner en visibilité ;)
 */
 
 @keyframes menuPageAnimation{
-  0%{height:0px;opacity:0;}
-  90%{height: 500px;opacity:1;}
-  100%{height:auto;opacity:1;overflow:visible;}
+0%{height:0px;opacity:0;}
+90%{height: 500px;opacity:1;}
+100%{height:auto;opacity:1;overflow:visible;}
 }
 
 
 main>article{}
-$exemple: (void);
+$exemple: (name: 'exemple'); // a map conaining at least a 'name' key, in case of use as an subcomponent
 @function exemple($_exemple: $exemple){
-	// ..do stuff for merging $_exemple into $exemple in the way you'd like, 
-  // ..and then return $exemple
-  @return $exemple;
+// ..do stuff 
+//...and @if $_exemple exists, merge it into $exemple before sending it back
+//...and @if it doesn't, apply your conditions on $exemple
+@if $_exemple != $exemple {
+    $exemple: map.merge($exemple, $_exemple);
+    // ..and maybe do other stuff. you can: 
+    // - forbidden value types, 
+    // - bound values, 
+    // - darknessing or lightnessing colors, 
+    // - etc...
+    // @if map-has-key($_exemple, 'name'){$exemple: map.set($exemple, "name", map.get($_exemple, "name")) + "modifying name property by adding string to it for example...";}
+    // @if map-has-key($_exemple, 'padding'){}
+    // @if map-has-key($_exemple, 'some_custom_values'){}
+    // ....
+}
+@return $exemple;
 }
 @mixin exemple($exemple: exemple()){
-  // you will have to use '&' in order to generate the BEM classes
+  @extend %exemple;
+  &__titre{@extend %exemple__titre;}
+  &__section{@extend %exemple__section;}
 }
 %exemple{
-  // you will have to use '&' in order to generate the BEM classes
-}
-.exemple{
   padding: 2rem 1rem;
   border-radius: 3rem 3rem 0 0;
   background: white;
   position: relative;
   background: whitesmoke;
-
   &__titre{
     padding-right: 5%;
     margin-block-end: 4rem;
@@ -56,7 +67,6 @@ $exemple: (void);
       @include pseudo-classes(btn-coeur(🤍,🧡), "before");
     }
   }
-
   &__section{
     >h3:not(#ok){
       text-transform: uppercase;
@@ -89,3 +99,4 @@ $exemple: (void);
     }
   }
 }
+.exemple{@include exemple();}
