@@ -37,9 +37,13 @@
 
 
 <!--
-    HTML ETAPE 3: 
-        rien à faire dans le code HTML dans cette étape 
--->>
+    HTML ETAPE 4: 
+        DANS NOTRE COMPOSANT BEM, L'ÉLÉMENT '.exemple__section' SEMBLE AUSSI POUVOIR ÊTRE TRANSFORMABLE EN COMPOSANT BEM
+        NOUS APPELERONT CE NOUVEAU COMPOSANT '.section'
+        IDENTIFIER SES ÉLÉMENTS, ET LEUR ATTRIBUER UNE CLASSE EN RESPECTANT LA NOMENCLATURE BEM
+
+        notre composant BEM .section comporte 3 éléments, un titre, une list, et un bouton
+-->
 <main>
 
     <article class="exemple">
@@ -48,10 +52,10 @@
             <a href="#fav__add-menu"></a>
         </h2>
         
-        <section class="exemple__section">
-            <h3 class="">Entrées</h3>
+        <section class="section exemple__section">
+            <h3 class="section__titre">Entrées</h3>
             
-            <ul class="">
+            <ul class="section__list">
                 
                 <li>
                     <h4>Ravioles de foie gras</h4>
@@ -79,7 +83,7 @@
                 </li>
             </ul>
 
-            <button class=""><span>Commander</span></button>
+            <button class="section__button"><span>Commander</span></button>
             
         </section>
 

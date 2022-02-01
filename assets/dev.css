@@ -46,43 +46,43 @@
 }
 
 /*LES DEFINITIONS DE LA CHARTE*/
-.exemple__section > ul > li, .exemple__section > h3:not(#ok), .laCarte__menus .plats__list > li, .laCarte__menus .plats__titre, .listSteps__list > li, .listSteps__titre {
+.section__list > li, .section__titre, .laCarte__menus .plats__list > li, .laCarte__menus .plats__titre, .listSteps__list > li, .listSteps__titre {
   font-weight: bold;
 }
 
-.exemple__section > h3:not(#ok), .laCarte__menus .plats__titre, .listMenus__titre, .listSteps__titre {
+.section__titre, .laCarte__menus .plats__titre, .listMenus__titre, .listSteps__titre {
   font-size: 1.7rem;
 }
 
-.exemple__section > ul > li h4, .laCarte__menus .plats__list.--liAnimation-1 > li h4, .laCarte__menus .plats__list--liAnimation-1 > li h4, .laCarte__menus .plats__list.--liAnimation-0 > li > h4, .laCarte__menus .plats__list--liAnimation-0 > li > h4, .listSteps__list.--liAnimation-1 > li h4, .listSteps__list--liAnimation-1 > li h4, .listSteps__list.--liAnimation-0 > li > h4, .listSteps__list--liAnimation-0 > li > h4, .exemple__section > h3:not(#ok), .laCarte__menus .plats__titre {
+.section__list > li h4, .laCarte__menus .plats__list.--liAnimation-1 > li h4, .laCarte__menus .plats__list--liAnimation-1 > li h4, .laCarte__menus .plats__list.--liAnimation-0 > li > h4, .laCarte__menus .plats__list--liAnimation-0 > li > h4, .listSteps__list.--liAnimation-1 > li h4, .listSteps__list--liAnimation-1 > li h4, .listSteps__list.--liAnimation-0 > li > h4, .listSteps__list--liAnimation-0 > li > h4, .section__titre, .laCarte__menus .plats__titre {
   text-shadow: -0.1px -1px 1px black;
 }
 
-.exemple__section > h3:not(#ok), .laCarte__menus .plats__titre {
+.section__titre, .laCarte__menus .plats__titre {
   color: silver;
 }
 
-.exemple__section > h3:not(#ok).--menu, .exemple__titre, .laCarte__menus .plats__titre.--menu, .laCarte__titre, .listSteps__titre.--menu {
+.exemple__titre, .section__titre.--menu, .laCarte__menus .plats__titre.--menu, .laCarte__titre, .listSteps__titre.--menu {
   font-size: xx-large;
 }
 
-.exemple__section > ul > li h4, .laCarte__menus .plats__list.--liAnimation-1 > li h4, .laCarte__menus .plats__list--liAnimation-1 > li h4, .laCarte__menus .plats__list.--liAnimation-0 > li > h4, .laCarte__menus .plats__list--liAnimation-0 > li > h4, .listSteps__list.--liAnimation-1 > li h4, .listSteps__list--liAnimation-1 > li h4, .listSteps__list.--liAnimation-0 > li > h4, .listSteps__list--liAnimation-0 > li > h4, .exemple__section > h3:not(#ok), .laCarte__menus .plats__titre {
+.section__list > li h4, .laCarte__menus .plats__list.--liAnimation-1 > li h4, .laCarte__menus .plats__list--liAnimation-1 > li h4, .laCarte__menus .plats__list.--liAnimation-0 > li > h4, .laCarte__menus .plats__list--liAnimation-0 > li > h4, .listSteps__list.--liAnimation-1 > li h4, .listSteps__list--liAnimation-1 > li h4, .listSteps__list.--liAnimation-0 > li > h4, .listSteps__list--liAnimation-0 > li > h4, .section__titre, .laCarte__menus .plats__titre {
   font-size: x-large;
 }
 
-.exemple__section > ul > li p, .laCarte__menus .plats__list.--liAnimation-1 > li p, .laCarte__menus .plats__list--liAnimation-1 > li p, .listSteps__list.--liAnimation-1 > li p, .listSteps__list--liAnimation-1 > li p {
+.section__list > li p, .laCarte__menus .plats__list.--liAnimation-1 > li p, .laCarte__menus .plats__list--liAnimation-1 > li p, .listSteps__list.--liAnimation-1 > li p, .listSteps__list--liAnimation-1 > li p {
   font-size: large;
 }
 
-.exemple__section > ul > li p span, .laCarte__menus .plats__list.--liAnimation-1 > li p span, .laCarte__menus .plats__list--liAnimation-1 > li p span, .listSteps__list.--liAnimation-1 > li p span, .listSteps__list--liAnimation-1 > li p span, .exemple__section > ul > li h4, .laCarte__menus .plats__list.--liAnimation-1 > li h4, .laCarte__menus .plats__list--liAnimation-1 > li h4, .laCarte__menus .plats__list.--liAnimation-0 > li > h4, .laCarte__menus .plats__list--liAnimation-0 > li > h4, .listSteps__list.--liAnimation-1 > li h4, .listSteps__list--liAnimation-1 > li h4, .listSteps__list.--liAnimation-0 > li > h4, .listSteps__list--liAnimation-0 > li > h4 {
+.section__list > li p span, .laCarte__menus .plats__list.--liAnimation-1 > li p span, .laCarte__menus .plats__list--liAnimation-1 > li p span, .listSteps__list.--liAnimation-1 > li p span, .listSteps__list--liAnimation-1 > li p span, .section__list > li h4, .laCarte__menus .plats__list.--liAnimation-1 > li h4, .laCarte__menus .plats__list--liAnimation-1 > li h4, .laCarte__menus .plats__list.--liAnimation-0 > li > h4, .laCarte__menus .plats__list--liAnimation-0 > li > h4, .listSteps__list.--liAnimation-1 > li h4, .listSteps__list--liAnimation-1 > li h4, .listSteps__list.--liAnimation-0 > li > h4, .listSteps__list--liAnimation-0 > li > h4 {
   font-weight: bold;
 }
 
-.exemple__section > h3:not(#ok), .laCarte__menus .plats__titre, .exemple__section > ul > li p, .laCarte__menus .plats__list.--liAnimation-1 > li p, .laCarte__menus .plats__list--liAnimation-1 > li p, .listSteps__list.--liAnimation-1 > li p, .listSteps__list--liAnimation-1 > li p {
+.section__titre, .laCarte__menus .plats__titre, .section__list > li p, .laCarte__menus .plats__list.--liAnimation-1 > li p, .laCarte__menus .plats__list--liAnimation-1 > li p, .listSteps__list.--liAnimation-1 > li p, .listSteps__list--liAnimation-1 > li p {
   font-weight: 100;
 }
 
-.exemple__section > h3:not(#ok).--menu, .exemple__titre, .laCarte__menus .plats__titre.--menu, .laCarte__titre, .listSteps__titre.--menu {
+.exemple__titre, .section__titre.--menu, .laCarte__menus .plats__titre.--menu, .laCarte__titre, .listSteps__titre.--menu {
   font-family: Shrikhand;
 }
 
@@ -156,19 +156,19 @@
 METTRE "!optional" LÀ OÙ IL FAUT...                             (À LA FIN DE TOUTES LES PLACEHOLDERS SUIVANTS)
 !!!!!!!!!!!!!!!
 */
-.exemple__section > ul > li > span, .laCarte__menus .plats__list.--liAnimation-1 > li > span, .laCarte__menus .plats__list--liAnimation-1 > li > span, .listSteps__list.--liAnimation-1 > li > span, .listSteps__list--liAnimation-1 > li > span {
+.section__list > li > span, .laCarte__menus .plats__list.--liAnimation-1 > li > span, .laCarte__menus .plats__list--liAnimation-1 > li > span, .listSteps__list.--liAnimation-1 > li > span, .listSteps__list--liAnimation-1 > li > span {
   width: 0%;
 }
 
-.exemple__section > ul > li:hover > span, .laCarte__menus .plats__list.--liAnimation-1 > li:hover > span, .laCarte__menus .plats__list--liAnimation-1 > li:hover > span, .listSteps__list.--liAnimation-1 > li:hover > span, .listSteps__list--liAnimation-1 > li:hover > span {
+.section__list > li:hover > span, .laCarte__menus .plats__list.--liAnimation-1 > li:hover > span, .laCarte__menus .plats__list--liAnimation-1 > li:hover > span, .listSteps__list.--liAnimation-1 > li:hover > span, .listSteps__list--liAnimation-1 > li:hover > span {
   width: 25%;
 }
 
-.exemple__section > ul > li:hover > p, .laCarte__menus .plats__list.--liAnimation-1 > li:hover > p, .laCarte__menus .plats__list--liAnimation-1 > li:hover > p, .listSteps__list.--liAnimation-1 > li:hover > p, .listSteps__list--liAnimation-1 > li:hover > p {
+.section__list > li:hover > p, .laCarte__menus .plats__list.--liAnimation-1 > li:hover > p, .laCarte__menus .plats__list--liAnimation-1 > li:hover > p, .listSteps__list.--liAnimation-1 > li:hover > p, .listSteps__list--liAnimation-1 > li:hover > p {
   width: 75%;
 }
 
-.exemple__section > ul > li > span, .laCarte__menus .plats__list.--liAnimation-1 > li > span, .laCarte__menus .plats__list--liAnimation-1 > li > span, .listSteps__list.--liAnimation-1 > li > span, .listSteps__list--liAnimation-1 > li > span {
+.section__list > li > span, .laCarte__menus .plats__list.--liAnimation-1 > li > span, .laCarte__menus .plats__list--liAnimation-1 > li > span, .listSteps__list.--liAnimation-1 > li > span, .listSteps__list--liAnimation-1 > li > span {
   height: 100%;
 }
 
@@ -176,7 +176,7 @@ METTRE "!optional" LÀ OÙ IL FAUT...                             (À LA FIN DE 
   padding: 0;
 }
 
-.exemple__section > ul > li h4, .laCarte__menus .plats__list.--liAnimation-1 > li h4, .laCarte__menus .plats__list--liAnimation-1 > li h4, .laCarte__menus .plats__list.--liAnimation-0 > li > h4, .laCarte__menus .plats__list--liAnimation-0 > li > h4, .listSteps__list.--liAnimation-1 > li h4, .listSteps__list--liAnimation-1 > li h4, .listSteps__list.--liAnimation-0 > li > h4, .listSteps__list--liAnimation-0 > li > h4 {
+.section__list > li h4, .laCarte__menus .plats__list.--liAnimation-1 > li h4, .laCarte__menus .plats__list--liAnimation-1 > li h4, .laCarte__menus .plats__list.--liAnimation-0 > li > h4, .laCarte__menus .plats__list--liAnimation-0 > li > h4, .listSteps__list.--liAnimation-1 > li h4, .listSteps__list--liAnimation-1 > li h4, .listSteps__list.--liAnimation-0 > li > h4, .listSteps__list--liAnimation-0 > li > h4 {
   margin-bottom: 0;
 }
 
@@ -208,22 +208,22 @@ METTRE "!optional" LÀ OÙ IL FAUT...                             (À LA FIN DE 
   float: right;
 }
 
-.exemple__section > ul > li > span, .exemple__section > ul > li, .exemple__section > h3:not(#ok), .laCarte__menus .plats__list.--liAnimation-1 > li > span, .laCarte__menus .plats__list--liAnimation-1 > li > span, .laCarte__menus .plats__list.--liAnimation-1 > li, .laCarte__menus .plats__list--liAnimation-1 > li, .laCarte__menus .plats__list > li, .laCarte__menus .plats__titre, .listMenus__card > figcaption, .listMenus__card, .listMenus, .listSteps__list.--liAnimation-1 > li > span, .listSteps__list--liAnimation-1 > li > span, .listSteps__list.--liAnimation-1 > li, .listSteps__list--liAnimation-1 > li, .listSteps__list > li, .headerBar {
+.section__list > li > span, .section__list > li, .section__titre, .laCarte__menus .plats__list.--liAnimation-1 > li > span, .laCarte__menus .plats__list--liAnimation-1 > li > span, .laCarte__menus .plats__list.--liAnimation-1 > li, .laCarte__menus .plats__list--liAnimation-1 > li, .laCarte__menus .plats__list > li, .laCarte__menus .plats__titre, .listMenus__card > figcaption, .listMenus__card, .listMenus, .listSteps__list.--liAnimation-1 > li > span, .listSteps__list--liAnimation-1 > li > span, .listSteps__list.--liAnimation-1 > li, .listSteps__list--liAnimation-1 > li, .listSteps__list > li, .headerBar {
   position: relative;
 }
 
-.before__titles--underline::before, .exemple__section > h3.--underline:not(#ok)::before, .laCarte__menus .plats__titre.--underline::before, .laCarte__menus .plats__titre--underline::before, .listSteps__titre.--underline::before, .listSteps__titre--underline::before, .exemple__section > ul > li > a::before, .laCarte__menus .plats__list.--liAnimation-1 > li > a::before, .laCarte__menus .plats__list--liAnimation-1 > li > a::before, .laCarte__menus .plats__list.--liAnimation-0 > li > a::before, .laCarte__menus .plats__list--liAnimation-0 > li > a::before, .listSteps__list.--liAnimation-1 > li > a::before, .listSteps__list--liAnimation-1 > li > a::before, .listSteps__list.--liAnimation-0 > li > a::before, .listSteps__list--liAnimation-0 > li > a::before, .exemple__section > ul > li > span, .laCarte__menus .plats__list.--liAnimation-1 > li > span, .laCarte__menus .plats__list--liAnimation-1 > li > span, .listSteps__list.--liAnimation-1 > li > span, .listSteps__list--liAnimation-1 > li > span {
+.before__titles--underline::before, .section__titre.--underline::before, .laCarte__menus .plats__titre.--underline::before, .laCarte__menus .plats__titre--underline::before, .listSteps__titre.--underline::before, .listSteps__titre--underline::before, .section__list > li > a::before, .laCarte__menus .plats__list.--liAnimation-1 > li > a::before, .laCarte__menus .plats__list--liAnimation-1 > li > a::before, .laCarte__menus .plats__list.--liAnimation-0 > li > a::before, .laCarte__menus .plats__list--liAnimation-0 > li > a::before, .listSteps__list.--liAnimation-1 > li > a::before, .listSteps__list--liAnimation-1 > li > a::before, .listSteps__list.--liAnimation-0 > li > a::before, .listSteps__list--liAnimation-0 > li > a::before, .section__list > li > span, .laCarte__menus .plats__list.--liAnimation-1 > li > span, .laCarte__menus .plats__list--liAnimation-1 > li > span, .listSteps__list.--liAnimation-1 > li > span, .listSteps__list--liAnimation-1 > li > span {
   position: absolute;
 }
 
-.exemple__section > ul > li > a::before, .laCarte__menus .plats__list.--liAnimation-1 > li > a::before, .laCarte__menus .plats__list--liAnimation-1 > li > a::before, .laCarte__menus .plats__list.--liAnimation-0 > li > a::before, .laCarte__menus .plats__list--liAnimation-0 > li > a::before, .listSteps__list.--liAnimation-1 > li > a::before, .listSteps__list--liAnimation-1 > li > a::before, .listSteps__list.--liAnimation-0 > li > a::before, .listSteps__list--liAnimation-0 > li > a::before {
+.section__list > li > a::before, .laCarte__menus .plats__list.--liAnimation-1 > li > a::before, .laCarte__menus .plats__list--liAnimation-1 > li > a::before, .laCarte__menus .plats__list.--liAnimation-0 > li > a::before, .laCarte__menus .plats__list--liAnimation-0 > li > a::before, .listSteps__list.--liAnimation-1 > li > a::before, .listSteps__list--liAnimation-1 > li > a::before, .listSteps__list.--liAnimation-0 > li > a::before, .listSteps__list--liAnimation-0 > li > a::before {
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
 }
 
-.exemple__section > ul > li > span, .laCarte__menus .plats__list.--liAnimation-1 > li > span, .laCarte__menus .plats__list--liAnimation-1 > li > span, .listSteps__list.--liAnimation-1 > li > span, .listSteps__list--liAnimation-1 > li > span {
+.section__list > li > span, .laCarte__menus .plats__list.--liAnimation-1 > li > span, .laCarte__menus .plats__list--liAnimation-1 > li > span, .listSteps__list.--liAnimation-1 > li > span, .listSteps__list--liAnimation-1 > li > span {
   top: 0;
   right: 0;
 }
@@ -693,7 +693,7 @@ footer > h5 {
     background: silver;
   }
 }
-.before__titles--underline::before, .exemple__section > h3.--underline:not(#ok)::before, .laCarte__menus .plats__titre.--underline::before, .laCarte__menus .plats__titre--underline::before, .listSteps__titre.--underline::before, .listSteps__titre--underline::before {
+.before__titles--underline::before, .section__titre.--underline::before, .laCarte__menus .plats__titre.--underline::before, .laCarte__menus .plats__titre--underline::before, .listSteps__titre.--underline::before, .listSteps__titre--underline::before {
   content: "";
   bottom: -1rem;
   left: 0;
@@ -1455,14 +1455,14 @@ $listMenus__card--figcaption: ();
 // système 7-1: Type de codebase optimal pour le codage en sass (scss)
 
 
-  CSS ETAPE 3: 
-    1°) CRÉER LA NOMENCLATURE BEM DANS LE %PLACEHOLDER ET DANS LA @MIXIN
-    2°) TRANSFÉRER LE DÉCLARATIONS DE L' .EXTENSION VERS LE %PLACEHOLDER
-    3°) PUIS DANS LES CIBLES DE LA @MIXIN, FAIRE DES @EXTEND DU PLACEHOLDER
-    4°) PUIS, INCLURE LA @MIXIN DANS L' .EXTENSION
-    5°) ET ENFIN, AMÉLIORER LES VALEURS ET COMPORTEMENTS PAR DÉFAUT DES $VARIABLES ET @FUNCTION DU COMPOSANT BEM
+  CSS ETAPE 4:
+    DANS NOTRE COMPOSANT BEM, L'ÉLÉMENT '.exemple__section' SEMBLE AUSSI POUVOIR ÊTRE TRANSFORMABLE EN COMPOSANT BEM
+    NOUS APPELERONT CE NOUVEAU COMPOSANT '.section'
 
-    vous pouvez fold les éléments de votre %placeholder pour gagner en visibilité ;)
+    IDENTIFIER CE FUTUR BLOCK BEM .section DANS LES RÈGLES DE STYLE SASS 
+    PUIS, IDENTIFIER SES ÉLÉMENTS (BALISES QUE VOUS VENEZ DE DÉFINIR DANS LE CODE HTML COMME LES ÉLÉMENTS DU FUTURE BLOCK BEM .section)
+    PUIS, CHANGER CE QU'IL FAUT POUR FAIRE APPARAÎTE LE NOM DE CES CLASSES BEM DANS VOTRE HIÉRARCHIE SASS
+
 */
 @keyframes menuPageAnimation {
   0% {
@@ -1479,6 +1479,143 @@ $listMenus__card--figcaption: ();
     overflow: visible;
   }
 }
+/******************************************************************************************/
+/*****************************************block .section***********************************/
+.section__titre {
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+}
+.section__list {
+  height: 0;
+  animation: menuPageAnimation 1s ease-in 1s 1 forwards;
+  overflow: hidden;
+  margin-bottom: 5rem;
+}
+@media screen and (min-width: 1000px) {
+  .section__list.DESKTOP {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .section__list.DESKTOP > li {
+    width: 33%;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .section__list:not(.DESKTOP) > li {
+    text-align: center;
+  }
+}
+.section__list > li {
+  box-sizing: border-box;
+  border-radius: 2rem;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 5px 10px 1px silver;
+  background: whitesmoke;
+}
+.section__list > li {
+  overflow: hidden;
+  padding: 0.5rem 1rem;
+  background: white;
+  transition: width 0.4s;
+}
+.section__list > li:hover > p {
+  box-sizing: border-box;
+}
+@media screen and (min-width: 1000px) {
+  .section__list > li:hover > p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+.section__list > li:hover > span {
+  transition: width 0.4s;
+}
+.section__list > li:hover > span:after {
+  transform: rotate(360deg);
+}
+.section__list > li:hover > p > span {
+  transform: translateX(-6em);
+}
+.section__list > li > p, .section__list > li > p > span {
+  display: inline-block;
+}
+.section__list > li p {
+  width: 95%;
+  white-space: nowrap;
+  padding: 0 2em 40px 0;
+  margin-bottom: 0;
+}
+@media screen and (max-width: 599px) {
+  .section__list > li p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+.section__list > li p span {
+  padding: 5px;
+  transition: transform 0.4s;
+  transform: translateX(0);
+  background: #99E2D0;
+}
+@media screen and (min-width: 1000px) {
+  .section__list > li p span {
+    position: relative;
+    right: 1rem;
+    top: 2rem;
+  }
+}
+.section__list > li > span {
+  background-color: #99E2D0;
+  right: -1rem;
+  transition: width 0.4s;
+  border-radius: 0 2em 2em 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section__list > li > span::after {
+  content: "✓";
+  transition: transform 1s;
+  transform: rotate(0deg);
+  font-weight: 900;
+  color: white;
+  font-size: xx-large;
+  border-radius: 3em;
+  border: solid white;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section__list > li > a::before {
+  content: "";
+}
+.section__button {
+  display: block;
+  margin: 0 auto;
+  border: none;
+  font-weight: bold;
+  transition: background-color 0.4s;
+  border-radius: 2em;
+  color: white;
+  background-color: #FF79DA;
+  background: linear-gradient(170deg, #ff79da 0%, rgba(147, 86, 220, 0.75) 65%, rgba(147, 86, 220, 0.75) 100%);
+  box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.3);
+}
+.section__button:hover {
+  background-color: #FF79DA;
+}
+.section__button span {
+  display: block;
+  padding: 1rem;
+}
+
+/******************************************************************************************/
+/*****************************************block exemple************************************/
 .exemple {
   padding: 2rem 1rem;
   border-radius: 3rem 3rem 0 0;
@@ -1507,138 +1644,6 @@ $listMenus__card--figcaption: ();
 }
 .exemple__titre a.coeur:visited {
   border: solid red;
-}
-.exemple__section > h3:not(#ok) {
-  text-transform: uppercase;
-  margin-bottom: 3rem;
-}
-.exemple__section > ul {
-  height: 0;
-  animation: menuPageAnimation 1s ease-in 1s 1 forwards;
-  overflow: hidden;
-  margin-bottom: 5rem;
-}
-@media screen and (min-width: 1000px) {
-  .exemple__section > ul.DESKTOP {
-    display: flex;
-    justify-content: space-between;
-  }
-}
-@media screen and (min-width: 1000px) {
-  .exemple__section > ul.DESKTOP > li {
-    width: 33%;
-  }
-}
-@media screen and (min-width: 1000px) {
-  .exemple__section > ul:not(.DESKTOP) > li {
-    text-align: center;
-  }
-}
-.exemple__section > ul > li {
-  box-sizing: border-box;
-  border-radius: 2rem;
-  padding: 2rem;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 5px 10px 1px silver;
-  background: whitesmoke;
-}
-.exemple__section > ul > li {
-  overflow: hidden;
-  padding: 0.5rem 1rem;
-  background: white;
-  transition: width 0.4s;
-}
-.exemple__section > ul > li:hover > p {
-  box-sizing: border-box;
-}
-@media screen and (min-width: 1000px) {
-  .exemple__section > ul > li:hover > p {
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-}
-.exemple__section > ul > li:hover > span {
-  transition: width 0.4s;
-}
-.exemple__section > ul > li:hover > span:after {
-  transform: rotate(360deg);
-}
-.exemple__section > ul > li:hover > p > span {
-  transform: translateX(-6em);
-}
-.exemple__section > ul > li > p, .exemple__section > ul > li > p > span {
-  display: inline-block;
-}
-.exemple__section > ul > li p {
-  width: 95%;
-  white-space: nowrap;
-  padding: 0 2em 40px 0;
-  margin-bottom: 0;
-}
-@media screen and (max-width: 599px) {
-  .exemple__section > ul > li p {
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-}
-.exemple__section > ul > li p span {
-  padding: 5px;
-  transition: transform 0.4s;
-  transform: translateX(0);
-  background: #99E2D0;
-}
-@media screen and (min-width: 1000px) {
-  .exemple__section > ul > li p span {
-    position: relative;
-    right: 1rem;
-    top: 2rem;
-  }
-}
-.exemple__section > ul > li > span {
-  background-color: #99E2D0;
-  right: -1rem;
-  transition: width 0.4s;
-  border-radius: 0 2em 2em 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.exemple__section > ul > li > span::after {
-  content: "✓";
-  transition: transform 1s;
-  transform: rotate(0deg);
-  font-weight: 900;
-  color: white;
-  font-size: xx-large;
-  border-radius: 3em;
-  border: solid white;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.exemple__section > ul > li > a::before {
-  content: "";
-}
-.exemple__section > button {
-  display: block;
-  margin: 0 auto;
-  border: none;
-  font-weight: bold;
-  transition: background-color 0.4s;
-  border-radius: 2em;
-  color: white;
-  background-color: #FF79DA;
-  background: linear-gradient(170deg, #ff79da 0%, rgba(147, 86, 220, 0.75) 65%, rgba(147, 86, 220, 0.75) 100%);
-  box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.3);
-}
-.exemple__section > button:hover {
-  background-color: #FF79DA;
-}
-.exemple__section > button span {
-  display: block;
-  padding: 1rem;
 }
 
 /*# sourceMappingURL=dev.css.map */

@@ -10,14 +10,14 @@
 // système 7-1: Type de codebase optimal pour le codage en sass (scss)
 
 
-  CSS ETAPE 3: 
-    1°) CRÉER LA NOMENCLATURE BEM DANS LE %PLACEHOLDER ET DANS LA @MIXIN
-    2°) TRANSFÉRER LE DÉCLARATIONS DE L' .EXTENSION VERS LE %PLACEHOLDER
-    3°) PUIS DANS LES CIBLES DE LA @MIXIN, FAIRE DES @EXTEND DU PLACEHOLDER
-    4°) PUIS, INCLURE LA @MIXIN DANS L' .EXTENSION
-    5°) ET ENFIN, AMÉLIORER LES VALEURS ET COMPORTEMENTS PAR DÉFAUT DES $VARIABLES ET @FUNCTION DU COMPOSANT BEM
-    
-    vous pouvez fold les éléments de votre %placeholder pour gagner en visibilité ;)
+  CSS ETAPE 4:
+    DANS NOTRE COMPOSANT BEM, L'ÉLÉMENT '.exemple__section' SEMBLE AUSSI POUVOIR ÊTRE TRANSFORMABLE EN COMPOSANT BEM
+    NOUS APPELERONT CE NOUVEAU COMPOSANT '.section'
+
+    IDENTIFIER CE FUTUR BLOCK BEM .section DANS LES RÈGLES DE STYLE SASS 
+    PUIS, IDENTIFIER SES ÉLÉMENTS (BALISES QUE VOUS VENEZ DE DÉFINIR DANS LE CODE HTML COMME LES ÉLÉMENTS DU FUTURE BLOCK BEM .section)
+    PUIS, CHANGER CE QU'IL FAUT POUR FAIRE APPARAÎTE LE NOM DE CES CLASSES BEM DANS VOTRE HIÉRARCHIE SASS
+
 */
 
 @keyframes menuPageAnimation{
@@ -28,6 +28,42 @@
 
 
 main>article{}
+
+/******************************************************************************************/
+/*****************************************block .section***********************************/
+.section{
+  &__titre{
+    text-transform: uppercase;
+    margin-bottom:3rem;
+    @extend %titre1--s;
+    @extend %rel;
+
+    @extend %titres;
+    @extend %fontB;
+    &.--menu{
+      @extend %titre-menu;    
+    }
+    &.--underline/*,&--underline*/{
+      @extend .before__titles--underline;
+    }
+  }
+  &__list{
+    height:0;
+    animation: menuPageAnimation 1s ease-in 1s 1 forwards;
+    overflow:hidden;
+    margin-bottom: 5rem;
+
+
+    @include blockList-0__list();
+    // @include blockList-0__list--liAnimation-0;
+    @include blockList-0__list--liAnimation-1;
+  }
+  &__button{
+    @include jumbotron__explorerButton;
+  }
+}
+/******************************************************************************************/
+/*****************************************block exemple************************************/
 $exemple: (name: 'exemple'); // a map conaining at least a 'name' key, in case of use as an subcomponent
 @function exemple($_exemple: $exemple){
 // ..do stuff 
@@ -68,35 +104,6 @@ $exemple: (name: 'exemple'); // a map conaining at least a 'name' key, in case o
     }
   }
   &__section{
-    >h3:not(#ok){
-      text-transform: uppercase;
-      margin-bottom:3rem;
-      @extend %titre1--s;
-      @extend %rel;
-
-      @extend %titres;
-      @extend %fontB;
-      &.--menu{
-        @extend %titre-menu;    
-      }
-      &.--underline/*,&--underline*/{
-        @extend .before__titles--underline;
-      }
-    }
-    >ul{
-      height:0;
-      animation: menuPageAnimation 1s ease-in 1s 1 forwards;
-      overflow:hidden;
-      margin-bottom: 5rem;
-
-
-      @include blockList-0__list();
-      // @include blockList-0__list--liAnimation-0;
-      @include blockList-0__list--liAnimation-1;
-    }
-    >button{
-      @include jumbotron__explorerButton;
-    }
   }
 }
 .exemple{@include exemple();}
