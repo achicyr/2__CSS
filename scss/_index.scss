@@ -1,0 +1,178 @@
+@import "./main.scss";
+
+
+
+
+// BEM: Block-Element-Modifier 
+// système 7-1: Type de codebase optimal pour le codage en sass (scss)
+
+@keyframes menuPageAnimation{
+    0%{height:0px;opacity:0;}
+    90%{height: 500px;opacity:1;}
+    100%{height:auto;opacity:1;overflow:visible;}
+}
+
+
+/*----------------------------------------------------------------*/
+$list: (void);
+@function list(){
+	// ..do stuff 
+	//...and transform $list beofre sending it back
+    @return $list;
+}
+@mixin list($list: list()){
+    @extend %list;
+    &__titre{@extend %list__titre;}
+    &__list{@extend %list__list;}
+    &__button{@extend %list__button;}
+}
+.list{@include list;}
+@mixin _list($list: list()){
+    @extend %_list;
+    >.__titre{}
+    >.__list{}
+    >.__button{}
+}
+._list{@include _list;}
+/*----------------------------------------------------------------*/
+$exemple: (void);
+@function exemple(){
+	// ..do stuff 
+	//...and transform $exemple beofre sending it back
+    @return $exemple;
+}
+@mixin exemple($exemple: exemple()){
+    @extend %exemple;
+    &__titre{@extend %exemple__titre;}
+    &__section{@extend %exemple__section;}
+}
+.exemple{@include exemple;}
+/*----------------------------------------------------------------*/
+%_list{
+    @extend %list;
+    >.__titre{@extend %list__titre;}
+    >.__list{@extend %list__list;}
+    >.__button{@extend %list__button;}
+}
+%list{
+    &__titre{
+        text-transform: uppercase;
+        margin-bottom:3rem;
+        @extend %titre1--s;
+        @extend %rel;
+
+        @extend %titres;
+        @extend %fontB;
+        &.--menu{
+            @extend %titre-menu;    
+        }
+        &.--underline/*,&--underline*/{
+            @extend .before__titles--underline;
+        }
+    }
+    &__list{
+        height:0;
+        animation: menuPageAnimation 1s ease-in 1s 1 forwards;
+        overflow:hidden;
+        margin-bottom: 5rem;
+
+
+        @include blockList-0__list();
+        @include blockList-0__list--liAnimation-0;
+        @include blockList-0__list--liAnimation-1;
+    }
+    &__button{
+        @include jumbotron__explorerButton;
+    }
+}
+%_exemple{
+    @extend %exemple;
+    >.__titre{@extend %list__titre;}
+    >.__list{@extend %list__list;}
+}
+%exemple{
+    padding: 2rem 1rem;
+    border-radius: 3rem 3rem 0 0;
+    background: white;
+    position: relative;
+    background: whitesmoke;
+
+    &__titre{
+        padding-right: 5%;
+        margin-block-end: 4rem;
+        @extend %titre-menu;    
+        a.coeur{text-decoration: none;
+            @extend %floatR;
+            @include pseudo-classes(btn-coeur(🤍,🧡), "before");
+        }
+    }
+    
+    &__section{
+        &.section{@include _list;}
+    }
+}
+
+/*----------------------------------------------------------------*/
+/*** LE COMPOSANT EST EXTERNALISÉ SOUS FORM DE BLOC BEM ***/
+/*----------------------------------------------------------------*/
+
+//FAUX!!!! .section{@extend .list;} // <<== IL N'EST PAS POSSIBLE  D'ÉTENDRE LE BLOC BEM DE CLASSE,    
+                            //      CAR L'ESPERLUETTE NE TRANSMET PAS À L'APPELANT DANS LES EXTENSIONS
+// .section{@include list;}    // <<== IL N'EST POSSIBLE QUE   D'INCLURE LE BLOC BEM DE MIXIN,     
+                            //      CAR L'ESPERLUETTE TRANSMET L'APPELANT DANS LES MIXINS
+
+//FAUX!!!! .test{@extend .exemple;} // <<== IL N'EST PAS POSSIBLE  D'ÉTENDRE LE BLOC BEM DE CLASSE,    
+                            //      CAR L'ESPERLUETTE NE TRANSMET PAS À L'APPELANT DANS LES EXTENSIONS
+.test{@include exemple;}    // <<== IL N'EST POSSIBLE QUE   D'INCLURE LE BLOC BEM DE MIXIN,     
+                            //      CAR L'ESPERLUETTE TRANSMET L'APPELANT DANS LES MIXINS
+    
+
+// main>article{
+//     padding: 2rem 1rem;
+//     border-radius: 3rem 3rem 0 0;
+//     background: white;
+//     position: relative;
+//     background: whitesmoke;
+
+//     >h2{
+//       padding-right: 5%;
+//       margin-block-end: 4rem;
+//       @extend %titre-menu;    
+//       a.coeur{text-decoration: none;
+//           @extend %floatR;
+//           @include pseudo-classes(btn-coeur(🤍,🧡), "before");
+//       }
+//     }
+
+//     >section{
+//       >h3:not(#ok){
+//         text-transform: uppercase;
+//         margin-bottom:3rem;
+//         @extend %titre1--s;
+//         @extend %rel;
+
+//         @extend %titres;
+//         @extend %fontB;
+//         &.--menu{
+//           @extend %titre-menu;    
+//         }
+//         &.--underline/*,&--underline*/{
+//           @extend .before__titles--underline;
+//         }
+//       }
+//       >ul{
+//         height:0;
+//         animation: menuPageAnimation 1s ease-in 1s 1 forwards;
+//         overflow:hidden;
+//         margin-bottom: 5rem;
+
+
+//         @include blockList-0__list();
+//         @include blockList-0__list--liAnimation-0;
+//         @include blockList-0__list--liAnimation-1;
+//       }
+//       >button{
+//         @include jumbotron__explorerButton;
+//       }
+//     }
+// }
