@@ -35,10 +35,23 @@ $list: (void);
 }
 ._list{@include _list;}
 /*----------------------------------------------------------------*/
-$exemple: (void);
-@function exemple(){
+$exemple: (name: 'exemple'); // a map conaining at least a 'name' key
+@function exemple($_exemple: $exemple){
 	// ..do stuff 
-	//...and transform $exemple beofre sending it back
+	//...and @if $_exemple exists, merge it into $exemple before sending it back
+    //...and @if it doesn't, apply your conditions on $exemple
+    @if $_exemple != $exemple {
+        $exemple: map.merge($exemple, $_exemple);
+        // ..and maybe do other stuff. you can: 
+        // - forbidden things, 
+        // - bound values, 
+        // - darknessing or lightnessing colors, 
+        // - etc...
+        // @if map-has-key($_exemple, 'name'){$exemple: map.set($exemple, "name", map.get($_exemple, "name")) + "modifying name property by adding string to it for example...";}
+        // @if map-has-key($_exemple, 'padding'){}
+        // @if map-has-key($_exemple, 'some_custom_values'){}
+        // ....
+    }
     @return $exemple;
 }
 @mixin exemple($exemple: exemple()){

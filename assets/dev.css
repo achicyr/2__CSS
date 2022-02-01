@@ -1450,6 +1450,11 @@ $listMenus__card--figcaption: ();
 /**/
 /**/
 /**/
+/*
+  CSS ETAPE 0: 
+  EXTRAIRE OU ISOLER LE STYLE SASS DU COMPOSANT DE BASE 
+  QUE VOUS AVEZ CHOISI D'OPTIMISER
+*/
 @keyframes menuPageAnimation {
   0% {
     height: 0px;
