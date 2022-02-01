@@ -1,3 +1,4 @@
+@use "sass:map";
 @import "./scss/main.scss";
 
 
@@ -9,22 +10,36 @@
 // système 7-1: Type de codebase optimal pour le codage en sass (scss)
 
 
-  CSS ETAPE 1: 
-    IDENTIFIER DANS VOTRE STYLE LES RÈGLES SASS CORRESPONDANTES: 
-    - AU BLOCK BEM (C'EST LE CODE QUE VOUS AVEZ EXTRAIT (ici la cible 'main>article{')
-    - AUX BALISES QUE VOUS VENEZ DE DÉFINIR DANS LE CODE HTML COMME LES ÉLÉMENT DU FUTURE BLOCK BEM
-    PUIS, CHANGER CE QU'IL FAUT POUR FAIRE APPARAÎTE LE NOM DE CES CLASSES BEM DANS VOTRE HIÉRARCHIE SASS
+  CSS ETAPE 2: 
+    CODER UN ENSEMBLE COMPLET DE FONCTIONNALITÉS SASS (VIDE POUR L'INSTANT)
+    PORTANT LE MÊME NOM (ET LA MÊME NOMENCLATURE) QUE VOTRE FUTURE COMPOSANT BEM UTILISERA,
+    ET COMPORTANT SI NÉCESSAIRE DES INFOS PAR DÉFAUT
+
+    On va utliser tous les outils(5) de SASS qui en font toute sa puissance, 
+    afin de rendre notre future composant le plus modulaire possible.
+    $variable, @function, @mixin, .extension(déjà là), et enfin %placeholder
 */
 
 @keyframes menuPageAnimation{
-    0%{height:0px;opacity:0;}
-    90%{height: 500px;opacity:1;}
-    100%{height:auto;opacity:1;overflow:visible;}
+  0%{height:0px;opacity:0;}
+  90%{height: 500px;opacity:1;}
+  100%{height:auto;opacity:1;overflow:visible;}
 }
 
 
-
 main>article{}
+$exemple: (void);
+@function exemple($_exemple: $exemple){
+	// ..do stuff for merging $_exemple into $exemple in the way you'd like, 
+  // ..and then return $exemple
+  @return $exemple;
+}
+@mixin exemple($exemple: exemple()){
+  // you will have to use '&' in order to generate the BEM classes
+}
+%exemple{
+  // you will have to use '&' in order to generate the BEM classes
+}
 .exemple{
   padding: 2rem 1rem;
   border-radius: 3rem 3rem 0 0;
