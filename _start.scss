@@ -10,27 +10,16 @@
 // système 7-1: Type de codebase optimal pour le codage en sass (scss)
 
 
-  CSS ETAPE 5:
-    REPRODUIRE LES ÉTAPE 2 ET 3 RECOPIÉ CI-DESSOUS, AFIN DE RENDRE NOTRE NOUVEAU COMPOSANT BEM .section LE PLUS MODULABLE POSSIBLE
+  CSS ETAPE 6:
+    AFIN DE POUVOIR EXTERNALISER NOTRE SOUS-COMPOSANT BEM .section,
+    NOUS AURONT BESOIN D'UTILISER LES INTERPOLATION SASS AVEC LA VARIABLE PARENT (ici .exemple) 
+    CONTENANT UNE CLÉ "sub" CONTENANT LE NOM DE CLASSE BEM 'CHOISI AU HASARD'
 
-        étape 2: 
-            CODER UN ENSEMBLE COMPLET DE FONCTIONNALITÉS SASS (VIDE POUR L'INSTANT)
-            PORTANT LE MÊME NOM (ET LA MÊME NOMENCLATURE) QUE VOTRE FUTURE COMPOSANT BEM UTILISERA,
-            ET COMPORTANT SI NÉCESSAIRE DES INFOS PAR DÉFAUT
-
-            On va utliser tous les outils(5) de SASS qui en font toute sa puissance,
-            afin de rendre notre future composant le plus modulaire possible.
-            $variable, @function, @mixin, .extension(déjà là), et enfin %placeholder
-    
-        étape 3:
-            1°) CRÉER LA NOMENCLATURE BEM DANS LE %PLACEHOLDER ET DANS LA @MIXIN
-            2°) TRANSFÉRER LE DÉCLARATIONS DE L' .EXTENSION VERS LE %PLACEHOLDER
-            3°) PUIS DANS LES CIBLES DE LA @MIXIN, FAIRE DES @EXTEND DU PLACEHOLDER
-            4°) PUIS, INCLURE LA @MIXIN DANS L' .EXTENSION
-            5°) ET ENFIN, AMÉLIORER LES VALEURS ET COMPORTEMENTS PAR DÉFAUT DES $VARIABLES ET @FUNCTION DU COMPOSANT BEM
-    
-            vous pouvez fold les éléments de votre %placeholder pour gagner en visibilité ;)
-
+    donc il faut ajouter la clé 'sub' à $exemple
+    et faire une interpolation dans l'élément du %exemple__section
+    lors de l'appelle à notre sous composant, il faudra utiliser deux instructions
+    - une pour le block (@extend)
+    - l'autre pour ses éléments (@include)
 */
 
 @keyframes menuPageAnimation{
@@ -105,7 +94,7 @@ $section: (name: "section");
 /******************************************************************************************/
 /******************************************************************************************/
 /**BLOCK EXEMPLE***************************************************************************/
-$exemple: (name: 'exemple'); // a map conaining at least a 'name' key, in case of use as an subcomponent
+$exemple: (name: 'exemple', sub: 'list'); // a map conaining at least a 'name' key, in case of use as an subcomponent
 @function exemple($_exemple: $exemple){
 // ..do stuff 
 //...and @if $_exemple exists, merge it into $exemple before sending it back
@@ -145,6 +134,14 @@ $exemple: (name: 'exemple'); // a map conaining at least a 'name' key, in case o
     }
   }
   &__section{
+    @if map-get($exemple, "sub"){
+      &.#{map-get($exemple, "sub")}{
+        @extend %section;
+      }
+      >.#{map-get($exemple, "sub")}{
+        @include section;
+      }
+    }
   }
 }
 .exemple{@include exemple();}
